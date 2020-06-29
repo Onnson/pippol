@@ -1,0 +1,22 @@
+{
+  "short_name": "SOS Box",
+  "name": "SOS Box",
+  "icons": [
+    {
+      "src": "assets/icon/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/icon/icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "play_store_key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqrmMX1A+NkPyY5kUOTSXWU23l974ROkbhLnbQUsMYZFcgsj99P6jpzEb6O6UbB343baYIJfIwXWnNDWxEQsbBdaGIdIZSIfOkEHt7pxKvlpyIhqmek0g4P6DgoW/pbxh693oxcXm4CoLXIGqbrFfpd74O3EpeTe2VcZyg8WsQ5jK4z2G+0/5F1/Gq6DMxAQvZbfDz1SqqeXT2UObTAkKynDm4qShqya8iwRSG1MwoCEyTAsQlctVVWvBDi2lZwsj2aSrgsRyj/ryvYbJD3cE5fPtkVAscWsg5W9LfrSNu/t39Y6BPMS2inrdLy6HOeYoVWdyKo2NFiVGDp/FuujSfQIDAQAB"
+}

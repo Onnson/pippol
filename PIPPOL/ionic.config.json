@@ -1,0 +1,7 @@
+{
+  "name": "PIPPOL",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

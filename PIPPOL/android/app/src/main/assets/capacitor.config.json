@@ -1,0 +1,17 @@
+{
+  "appId": "app.sosbox",
+  "appName": "SOS Box",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/snap/android-studio/88/android-studio/bin/studio.sh",
+  "android": {
+    "allowMixedContent": true
+  }
+}

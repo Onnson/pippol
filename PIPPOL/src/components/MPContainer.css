@@ -1,0 +1,94 @@
+.mpcontainer {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(1%);
+}
+
+.maincontainer {
+  bottom: 50%;
+  transform: translateY(+50%)!important;
+  background-color: black;
+}
+
+.mpcontainer strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.mpcontainer p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+.mpcontainer a {
+  text-decoration: none;
+}
+
+ion-input, ion-textarea{
+  border-bottom: solid 1px;
+}
+.displayNone { display: none; }
+.statusLabelVisible {padding-bottom: 20px; display: block; visibility: visible; color: #3880ff;}
+.topLabel {  text-align: center;}
+.ImInStatus {padding-top: 20px;}
+.countdownLabelDiv {padding-bottom: 20px; white-space: pre-line;}
+.countdownLabel {font-size: x-large; color: white;}
+.ImOKButton {width: 60%; height: 200px; margin-bottom: 40px;}
+.ion-page {background-color: black;}
+ion-content{--ion-background-color: black; --background: black !important;}
+.whitebg {background-color: white;}
+ion-toolbar {--ion-background-color: black; color: white;}
+ion-label {color: white;}
+.native-input .sc-ion-input-md {color: white;}
+ion-textarea, ion-input {
+  background: white!important;
+  border: 2px solid orange;
+  margin: 4px;
+}
+.locationInput {
+  text-align: center;
+}
+.locationInput > input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.geobutton { cursor: pointer;}
+.goingin {cursor: pointer; }
+.cursorPointer {cursor: pointer; }
+.locationLabelDiv {padding-bottom: 2px;}
+.locationLabel {font-size: larger; color: white;}
+.modalButton {width: 50%; height: 44px;}
+.imokmodal {background: black !important; --background: black;}
+.modal-wrapper .item-native .item-inner .input-wrapper {background-color: black !important;}
+.blackbg {background-color: black !important;}
+.smallLabel {font-size: small; text-align: left;}
+.IMOKIonCheckbox {--ion-background-color: white; margin-inline-end: 12px!important;}
+/* .errorLabel {} */
+.IonSelect {background-color: white;}
+.leftalign {float: left; padding-left: 22px; padding-right: 29px;}
+.leftalign-nofloat {padding-left: 22px; padding-right: 29px; text-align: left;}
+.fullCredits {color: #4f4f4f!important; letter-spacing: 3px;} /* b6424a 53508f */
+.emptyCredits {color: #333!important; letter-spacing: 3px;}
+.white {color: white;}
+.warn {color:#ffc409;}
+.subscriptionGrid {width: 80%;}
+.subscriptionUnChosen {opacity: 100%;}
+.subscriptionChosen {opacity: 100%;}
+.subscriptionRadio {opacity: 1000%;}
+.subscriptionPrice {color: #aaa; font-size: small; text-align: center; width: 100%; transform: translateX(-0px);}
+.paddingbottom {padding-bottom: 30px;}
+.stripeForm {align-content: center;}
+#card-element{width: 90%; position: absolute; transform: translate(3%, 0%);}
+.googlePlayIcon {padding-top: 19px;}
+
+.alert-button-group {
+  flex-direction: row !important;
+}
+.sureRate {
+  font-weight: bolder!important;
+  /* color: #ffc409!important; */
+}

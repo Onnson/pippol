@@ -1,0 +1,7 @@
+{
+    "host": "http://10.0.0.4:8080",
+    "host-": "https://pippol.herokuapp.com",
+    "host--": "https://services.pippol.app",
+    "host---": "https://pippol-staging.herokuapp.com",
+    "versionName": "0.9.5.0.1"
+}
