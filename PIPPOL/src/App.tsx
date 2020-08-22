@@ -7,8 +7,10 @@ import IMIN from './pages/ImIN';
 import SETUP from './pages/Setup';
 import SIGNOUT from './pages/SignOut';
 import SIGNUP from './pages/SignUp';
+import SIGNUPADVANCE from './pages/SignupAdvance';
 import SIGNIN from './pages/SignIn';
 import SUBSCRIPTION from './pages/Subscription';
+import MakeEvent from './pages/MakeEvent';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,8 +47,10 @@ const App: React.FC = () => (
         <Route path="/setup" component={SETUP} exact={true} />
         <Route path="/signout" component={SIGNOUT} exact={true} />
         <Route path="/signup" component={SIGNUP} exact={true} />
+        <Route path="/signup-advance" component={SIGNUPADVANCE} exact={true} />
         <Route path="/signin" component={SIGNIN} exact={true} />
         <Route path="/subscription" component={SUBSCRIPTION} exact={true} />
+        <Route path="/make-event" component={MakeEvent} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

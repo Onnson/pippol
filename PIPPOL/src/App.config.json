@@ -1,5 +1,5 @@
 {
-    "host": "http://10.0.0.4:8080",
+    "host": "http://127.0.0.1:8080",
     "host-": "https://pippol.herokuapp.com",
     "host--": "https://services.pippol.app",
     "host---": "https://pippol-staging.herokuapp.com",

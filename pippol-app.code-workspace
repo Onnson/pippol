@@ -3,5 +3,13 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"cSpell.words": [
+			"Appartment",
+			"Chenge",
+			"signup",
+			"youtube"
+		]
+	}
 }

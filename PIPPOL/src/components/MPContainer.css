@@ -1,3 +1,10 @@
+ion-scroll[direction=x] {
+  width: 100vw;
+}
+ion-scroll[direction=y] {
+  height: 100vh;
+}
+
 .mpcontainer {
   text-align: center;
   position: absolute;
@@ -7,9 +14,9 @@
 }
 
 .maincontainer {
-  bottom: 50%;
-  transform: translateY(+50%)!important;
-  background-color: black;
+  /* bottom: 100%;
+  transform: translateY(+100%)!important; */
+  /* background-color: black; */
 }
 
 .mpcontainer strong {
@@ -38,8 +45,8 @@ ion-input, ion-textarea{
 .countdownLabelDiv {padding-bottom: 20px; white-space: pre-line;}
 .countdownLabel {font-size: x-large; color: white;}
 .ImOKButton {width: 60%; height: 200px; margin-bottom: 40px;}
-.ion-page {background-color: black;}
-ion-content{--ion-background-color: black; --background: black !important;}
+/* .ion-page {background-color: black;} */
+/* ion-content{--ion-background-color: black; --background: black !important;} */
 .whitebg {background-color: white;}
 ion-toolbar {--ion-background-color: black; color: white;}
 ion-label {color: white;}
@@ -63,8 +70,8 @@ ion-textarea, ion-input {
 .locationLabel {font-size: larger; color: white;}
 .modalButton {width: 50%; height: 44px;}
 .imokmodal {background: black !important; --background: black;}
-.modal-wrapper .item-native .item-inner .input-wrapper {background-color: black !important;}
-.blackbg {background-color: black !important;}
+/* .modal-wrapper .item-native .item-inner .input-wrapper {background-color: black !important;} */
+/* .blackbg {background-color: black !important;} */
 .smallLabel {font-size: small; text-align: left;}
 .IMOKIonCheckbox {--ion-background-color: white; margin-inline-end: 12px!important;}
 /* .errorLabel {} */

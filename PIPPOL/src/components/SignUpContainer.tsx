@@ -29,6 +29,7 @@ const SignUpContainer: React.FC<ContainerProps> = () => {
             document.location.href = "/SignIn";
           } else if ("success" == result.status) {
             Storage.set({key:"userDetails", value: JSON.stringify(result.userDetails)});
+            console.log(result.userDetails)
             document.location.href = "/Home";
           }
         },
