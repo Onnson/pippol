@@ -3,6 +3,8 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonToast, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import CreatNewPerformer from './pages/CreatNewPerformer';
+import CreatNewSpot from './pages/CreatNewSpot';
 import IMIN from './pages/ImIN';
 import SETUP from './pages/Setup';
 import SIGNOUT from './pages/SignOut';
@@ -34,8 +36,9 @@ import ReactDOM from 'react-dom';
 import { Plugins } from '@capacitor/core';
 
 let exitbuttonPressed = 0;
-let exitClickInterval : any;
-var exitClickSeconds = 2, exitClickSecondsDef = 2;
+let exitClickInterval: any;
+var exitClickSeconds = 2,
+  exitClickSecondsDef = 2;
 
 const App: React.FC = () => (
   <IonApp>
@@ -43,6 +46,8 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route path="/creatNewPerformer" component={CreatNewPerformer} exact={true} />
+        <Route path="/creatNewSpot" component={CreatNewSpot} exact={true} />
         <Route path="/imin" component={IMIN} exact={true} />
         <Route path="/setup" component={SETUP} exact={true} />
         <Route path="/signout" component={SIGNOUT} exact={true} />
@@ -56,8 +61,6 @@ const App: React.FC = () => (
   </IonApp>
 );
 
-
-
 document.addEventListener('ionBackButton', (ev) => {
   ev.preventDefault();
   ev.stopImmediatePropagation();
@@ -65,38 +68,32 @@ document.addEventListener('ionBackButton', (ev) => {
     window.location.href = '/';
   } else if (window.location.pathname != '/ImIn') {
     backPushed();
-    const ttt = (
-      <IonToast
-    isOpen={true}
-    message="Tap back again to exit"
-    duration={1000}/>
-    );
+    const ttt = <IonToast isOpen={true} message="Tap back again to exit" duration={1000} />;
     var exitDiv = document.getElementById('exitDiv');
-    ReactDOM.render(<IonLabel/>, exitDiv);
+    ReactDOM.render(<IonLabel />, exitDiv);
     ReactDOM.render(ttt, exitDiv);
-  } 
+  }
 });
 
 const backPushed = () => {
   var now = new Date();
-    if (exitbuttonPressed == 0) {
-      exitbuttonPressed = Math.round(now.getTime() / 1000);
-      clearInterval(exitClickInterval);
-      exitClickInterval = setInterval(() => {
-        if (exitClickSeconds > 0) {
-        } else {
-          exitClickSeconds = exitClickSecondsDef;
-          exitbuttonPressed = 0;
-          clearInterval(exitClickInterval);
-        }
-      }, 1000);
-    } else if (exitbuttonPressed > (Math.round(now.getTime() / 1000)) - exitClickSecondsDef) {
-      Plugins.App.exitApp();
-    } else {
-      exitbuttonPressed = 0;
-      exitClickSeconds = exitClickSecondsDef;
-    }
-}
+  if (exitbuttonPressed == 0) {
+    exitbuttonPressed = Math.round(now.getTime() / 1000);
+    clearInterval(exitClickInterval);
+    exitClickInterval = setInterval(() => {
+      if (exitClickSeconds > 0) {
+      } else {
+        exitClickSeconds = exitClickSecondsDef;
+        exitbuttonPressed = 0;
+        clearInterval(exitClickInterval);
+      }
+    }, 1000);
+  } else if (exitbuttonPressed > Math.round(now.getTime() / 1000) - exitClickSecondsDef) {
+    Plugins.App.exitApp();
+  } else {
+    exitbuttonPressed = 0;
+    exitClickSeconds = exitClickSecondsDef;
+  }
+};
 
 export default App;
-

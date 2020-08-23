@@ -43,7 +43,7 @@ const subPresentationHeb = ['להטוטן', 'מנחה'];
 const subWorkshopEng = ['Lecture', 'Class', 'Other'];
 const subWorkshopHeb = ['הרצאה', 'הוראה', 'סדנה אחר'];
 
-const NewPerformer: React.FC<ContainerProps> = () => {
+const NewSpot: React.FC<ContainerProps> = () => {
   const { Storage } = Plugins;
   const { register, handleSubmit, watch, errors, setValue } = useForm();
   const onSubmit = (data: any) => {
@@ -217,4 +217,4 @@ const NewPerformer: React.FC<ContainerProps> = () => {
   );
 };
 
-export default NewPerformer;
+export default NewSpot;

@@ -4,7 +4,7 @@ import React from 'react';
 import HomeContainer from '../components/HomeContainer';
 import ExitContainer from '../components/ExitContainer';
 import './Home.css';
-import NewPerformer from '../components/ui-components/NewPerformer';
+import NewSpot from '../components/ui-components/NewSpot';
 
 const Home: React.FC = () => {
   return (
@@ -18,8 +18,8 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blankz</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <HomeContainer />
-        {/* <NewPerformer /> */}
+        {/* <HomeContainer /> */}
+        <NewSpot />
         <ExitContainer></ExitContainer>
       </IonContent>
     </IonPage>
