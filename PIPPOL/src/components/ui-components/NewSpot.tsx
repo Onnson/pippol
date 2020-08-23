@@ -31,17 +31,11 @@ import { host } from '../../App.config.json';
 
 interface ContainerProps {}
 
-const subMusicEng = ['dj', 'band', 'singer', 'player'];
-const subMusicHeb = ['Dj', 'להקה', 'זמר', 'שחקן'];
+const subPrivateEng = ['Roof', 'Yard', 'House', 'Appartment'];
+const subPrivateHeb = ['גג', 'חצר', 'בית', 'מרתף'];
 
-const subShowEng = ['comedy', 'play', 'other'];
-const subShowHeb = ['בידור', 'הצגה', 'מופע אחר'];
-
-const subPresentationEng = ['juggler', 'moderator'];
-const subPresentationHeb = ['להטוטן', 'מנחה'];
-
-const subWorkshopEng = ['Lecture', 'Class', 'Other'];
-const subWorkshopHeb = ['הרצאה', 'הוראה', 'סדנה אחר'];
+const subCommercialEng = ['Pub', 'Club', 'Museum', 'Other'];
+const subCommercialHeb = ['פאב', 'מועדון', 'מוזיאון', 'אחר'];
 
 const NewSpot: React.FC<ContainerProps> = () => {
   const { Storage } = Plugins;
@@ -50,29 +44,29 @@ const NewSpot: React.FC<ContainerProps> = () => {
     data['category'] = category;
     data['subCategory'] = subCategory;
     console.log(data);
-    fetch(host + '/creatNewPerformer', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        data: data,
-      }),
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          document.location.href = '/Home';
-        },
-        (error) => {
-          //console.log("error: " + error);
-          alert(error);
-        }
-      );
+    // fetch(host + '/creatNewPerformer', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     data: data,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then(
+    //     (result) => {
+    //       document.location.href = '/Home';
+    //     },
+    //     (error) => {
+    //       //console.log("error: " + error);
+    //       alert(error);
+    //     }
+    //   );
   };
 
-  const [category, setCategory] = useState<string>('music');
-  const [subCategory, setSubCategory] = useState<string>('dj');
+  const [category, setCategory] = useState<string>('Private');
+  const [subCategory, setSubCategory] = useState<string>('Roof');
   const [showModal, setShowModal] = useState(false);
   const [payment, setPayment] = useState({
     count: 1,
@@ -83,13 +77,13 @@ const NewSpot: React.FC<ContainerProps> = () => {
     <div style={{ direction: 'rtl' }}>
       <IonList>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <IonTitle>הוספת מופיע חדש</IonTitle>
+          <IonTitle>הוספת ספוט חדש</IonTitle>
           <IonItemGroup>
             <IonInput
               name="name"
-              placeholder="שם המופיע"
+              placeholder="שם הספוט"
               maxlength={50}
-              ref={register({ required: { value: true, message: 'נדרש להוסיף שם מופיע' } })}
+              ref={register({ required: { value: true, message: 'נדרש להוסיף שם ספוט' } })}
             ></IonInput>
             <IonLabel color="warning">{errors.name && errors.name.message}</IonLabel>
           </IonItemGroup>
@@ -104,71 +98,37 @@ const NewSpot: React.FC<ContainerProps> = () => {
             <IonTitle>קטגוריה</IonTitle>
 
             <IonItem>
-              <IonLabel>מוזיקה</IonLabel>
-              <IonRadio slot="start" value="music" />
+              <IonLabel>פרטי</IonLabel>
+              <IonRadio slot="start" value="Private" />
             </IonItem>
 
             <IonItem>
-              <IonLabel>הופעה</IonLabel>
-              <IonRadio slot="start" value="show" />
-            </IonItem>
-
-            <IonItem>
-              <IonLabel>פרזנטציה</IonLabel>
-              <IonRadio slot="start" value="presentation" />
-            </IonItem>
-
-            <IonItem>
-              <IonLabel>סדנאות</IonLabel>
-              <IonRadio slot="start" value="workshop" />
+              <IonLabel>מסחרי</IonLabel>
+              <IonRadio slot="start" value="Commercial" />
             </IonItem>
           </IonRadioGroup>
 
           <br />
           <IonTitle>תת קטגוריה</IonTitle>
 
-          {category == 'music' && (
+          {category == 'Private' && (
             <IonRadioGroup value={subCategory} onIonChange={(e) => setSubCategory(e.detail.value)}>
-              {subMusicEng.map((item, i) => {
+              {subPrivateEng.map((item, i) => {
                 return (
                   <IonItem>
-                    <IonLabel>{subMusicHeb[i]}</IonLabel>
+                    <IonLabel>{subPrivateHeb[i]}</IonLabel>
                     <IonRadio slot="start" value={item} />
                   </IonItem>
                 );
               })}
             </IonRadioGroup>
           )}
-          {category == 'show' && (
+          {category == 'Commercial' && (
             <IonRadioGroup value={subCategory} onIonChange={(e) => setSubCategory(e.detail.value)}>
-              {subShowEng.map((item, i) => {
+              {subCommercialEng.map((item, i) => {
                 return (
                   <IonItem>
-                    <IonLabel>{subShowHeb[i]}</IonLabel>
-                    <IonRadio slot="start" value={item} />
-                  </IonItem>
-                );
-              })}
-            </IonRadioGroup>
-          )}
-          {category == 'presentation' && (
-            <IonRadioGroup value={subCategory} onIonChange={(e) => setSubCategory(e.detail.value)}>
-              {subPresentationEng.map((item, i) => {
-                return (
-                  <IonItem>
-                    <IonLabel>{subPresentationHeb[i]}</IonLabel>
-                    <IonRadio slot="start" value={item} />
-                  </IonItem>
-                );
-              })}
-            </IonRadioGroup>
-          )}
-          {category == 'workshop' && (
-            <IonRadioGroup value={subCategory} onIonChange={(e) => setSubCategory(e.detail.value)}>
-              {subWorkshopEng.map((item, i) => {
-                return (
-                  <IonItem>
-                    <IonLabel>{subWorkshopHeb[i]}</IonLabel>
+                    <IonLabel>{subCommercialHeb[i]}</IonLabel>
                     <IonRadio slot="start" value={item} />
                   </IonItem>
                 );
@@ -177,20 +137,34 @@ const NewSpot: React.FC<ContainerProps> = () => {
           )}
           <br />
 
+          <IonItemDivider>כתובת</IonItemDivider>
+          <IonInput placeholder="שם העיר" name="city" ref={register()}></IonInput>
+          <IonInput placeholder="שם הרחוב" name="street" ref={register()}></IonInput>
+          <IonInput placeholder="מספר" name="addersNumber" ref={register()}></IonInput>
+          <br />
+
           <IonItemDivider>קישורים</IonItemDivider>
           <div style={{ direction: 'ltr' }}>
+            <IonInput placeholder="אתר הבית" name="site" type="url" ref={register()}></IonInput>
             <IonInput placeholder="Facebook" name="facebookLink" type="url" ref={register()}></IonInput>
             <IonInput placeholder="youtube" name="youtubeLink" type="url" ref={register()}></IonInput>
             <IonInput placeholder="google" name="googleLink" type="url" ref={register()}></IonInput>
           </div>
           <br />
 
-          <IonItemDivider>הוספת קישור לסרטון</IonItemDivider>
-          <div style={{ direction: 'ltr' }}>
-            <IonInput placeholder="youtube link" name="youtubeVideo" type="url" ref={register()}></IonInput>
-          </div>
+          <IonItemDivider>פרטים על המקום</IonItemDivider>
+          <IonInput placeholder="מספר אורחים מקסימלי" type="number" name="maxGuest" ref={register()}></IonInput>
+          <IonInput placeholder="מקומות חניה" type="number" name="parkingNumber" ref={register()}></IonInput>
+          <br />
 
-          <IonItemDivider>דרישות מופיע</IonItemDivider>
+          <IonItemDivider> ציוד וצוות מקצועי</IonItemDivider>
+          <IonInput placeholder="ציוד קיים" name="existingEquipment" ref={register()}></IonInput>
+          <IonInput placeholder="ציוד נדרש" name="requiredEquipment" ref={register()}></IonInput>
+          <IonInput placeholder="צוות מקצועי קיים" name="existingStaff" ref={register()}></IonInput>
+          <IonInput placeholder="צוות מקצועי נדרש" name="requiredStaff" ref={register()}></IonInput>
+          <br />
+
+          <IonItemDivider>מחיר</IonItemDivider>
           <IonItemGroup>
             {/* <IonInput placeholder="כותרת"></IonInput> */}
             <IonItem>
@@ -200,16 +174,16 @@ const NewSpot: React.FC<ContainerProps> = () => {
               <IonInput placeholder="אחוז מהכנסות" type="number" name="partPrice" ref={register()}></IonInput>
             </IonItem>
             {/* <IonButton>הוסף אפשרות תשלום</IonButton> */}
-            <IonInput placeholder="ציוד באחריות המופיע" name="equipmentFromPerformer" ref={register()}></IonInput>
-            <IonInput placeholder="ציוד באחריות המזמין" name="equipmentFromProduction" ref={register()}></IonInput>
+            {/* <IonInput placeholder="ציוד באחריות המופיע" name="equipmentFromPerformer" ref={register()}></IonInput>
+            <IonInput placeholder="ציוד באחריות המזמין" name="equipmentFromProduction" ref={register()}></IonInput> */}
           </IonItemGroup>
 
           <IonItemDivider>הערות ומגבלות</IonItemDivider>
-          <IonInput placeholder="מגבלות גיאוגרפיות" name="geographicalRestrictions" ref={register()}></IonInput>
+          <IonInput placeholder="תוספות" name="extras" ref={register()}></IonInput>
           <IonInput placeholder="הערות" name="remarks" ref={register()}></IonInput>
 
           <IonButton expand="block" size="large" id="saveButton" href="Home" type="submit" color="warning">
-            הוספת מופיע חדש
+            הוספת ספוט חדש
           </IonButton>
         </form>
       </IonList>
