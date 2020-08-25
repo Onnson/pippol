@@ -4,7 +4,7 @@ import { IonApp, IonRouterOutlet, IonToast, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import CreatNewPerformer from './pages/CreatNewPerformer';
-import CreatNewSpot from './pages/CreatNewSpot';
+import NewSpot from './pages/NewSpot';
 import IMIN from './pages/ImIN';
 import SETUP from './pages/Setup';
 import SIGNOUT from './pages/SignOut';
@@ -13,6 +13,8 @@ import SIGNUPADVANCE from './pages/SignupAdvance';
 import SIGNIN from './pages/SignIn';
 import SUBSCRIPTION from './pages/Subscription';
 import MakeEvent from './pages/MakeEvent';
+import Performer from './pages/Performer';
+import PerformerList from './pages/PerformerList';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,9 +47,11 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
+        <Route path="/Performer/:id" component={Performer} exact={true} />
+        <Route path="/PerformerList" component={PerformerList} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
         <Route path="/creatNewPerformer" component={CreatNewPerformer} exact={true} />
-        <Route path="/creatNewSpot" component={CreatNewSpot} exact={true} />
+        <Route path="/NewSpot" component={NewSpot} exact={true} />
         <Route path="/imin" component={IMIN} exact={true} />
         <Route path="/setup" component={SETUP} exact={true} />
         <Route path="/signout" component={SIGNOUT} exact={true} />

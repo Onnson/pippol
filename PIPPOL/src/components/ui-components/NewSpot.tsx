@@ -44,25 +44,25 @@ const NewSpot: React.FC<ContainerProps> = () => {
     data['category'] = category;
     data['subCategory'] = subCategory;
     console.log(data);
-    // fetch(host + '/creatNewPerformer', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     data: data,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then(
-    //     (result) => {
-    //       document.location.href = '/Home';
-    //     },
-    //     (error) => {
-    //       //console.log("error: " + error);
-    //       alert(error);
-    //     }
-    //   );
+    fetch(host + '/NewSpot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        data: data,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          document.location.href = '/Home';
+        },
+        (error) => {
+          //console.log("error: " + error);
+          alert(error);
+        }
+      );
   };
 
   const [category, setCategory] = useState<string>('Private');
@@ -145,7 +145,7 @@ const NewSpot: React.FC<ContainerProps> = () => {
 
           <IonItemDivider>קישורים</IonItemDivider>
           <div style={{ direction: 'ltr' }}>
-            <IonInput placeholder="אתר הבית" name="site" type="url" ref={register()}></IonInput>
+            <IonInput placeholder="אתר הבית" name="webSite" type="url" ref={register()}></IonInput>
             <IonInput placeholder="Facebook" name="facebookLink" type="url" ref={register()}></IonInput>
             <IonInput placeholder="youtube" name="youtubeLink" type="url" ref={register()}></IonInput>
             <IonInput placeholder="google" name="googleLink" type="url" ref={register()}></IonInput>
