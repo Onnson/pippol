@@ -44,8 +44,8 @@ const HomeContainer: React.FC<ContainerProps> = () => {
     <div className="mpcontainer maincontainer">
       <div>
         <IonItemDivider>links to new page</IonItemDivider>
-        <IonButton onClick={() => (document.location.href = '/creatNewPerformer')}>Creat New Performer</IonButton>
-        <IonButton onClick={() => (document.location.href = '/NewSpot')}>Creat New Spot</IonButton>
+        <IonButton onClick={() => (document.location.href = '/creatNewPerformer')}>Create New Performer</IonButton>
+        <IonButton onClick={() => (document.location.href = '/NewSpot')}>Create New Spot</IonButton>
         <IonItemDivider>links to new page</IonItemDivider>
       </div>
       {isLogIn ? (
